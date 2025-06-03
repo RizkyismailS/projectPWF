@@ -1,5 +1,4 @@
 <!-- ====== Footer Section Start -->
-@include('layout.web.link')    
 <footer
       class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]"
       data-wow-delay=".15s"
@@ -612,9 +611,7 @@
     alert("Chat feature is under development!");
   }
 </script>
- @include('layout.web.scripts')
     <script>
-      // Back to Top Button
 const backToTopButton = document.querySelector(".back-to-top");
 
 window.addEventListener("scroll", () => {

@@ -1,11 +1,12 @@
 <link
       rel="shortcut icon"
-      href="assets/images/favicon.png"
+      href="assets/images/logo/logo-transparent.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="./src/css/tailwind.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- ==== WOW JS ==== -->
     <script src="assets/js/wow.min.js"></script>
@@ -38,22 +39,23 @@
           document.body.scrollTop;
 
         for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (
-            refElement.offsetTop <= scrollTopMinus &&
-            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-          ) {
-            document
-              .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
+  const currLink = sections[i];
+  const val = currLink.getAttribute("href");
+  const refElement = document.querySelector(val);
+  const scrollTopMinus = scrollPos + 73;
+  if (
+    refElement && // CEK refElement ADA
+    refElement.offsetTop <= scrollTopMinus &&
+    refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+  ) {
+    document
+      .querySelector(".ud-menu-scroll")
+      .classList.remove("active");
+    currLink.classList.add("active");
+  } else if (refElement) {
+    currLink.classList.remove("active");
+  }
+}
       }
 
       window.document.addEventListener("scroll", onScroll);

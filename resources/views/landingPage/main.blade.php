@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Play | Free Tailwind CSS Template for Startup and SaaS By TailGrids
+      SupplyNest - Penyedia Barang Terpercaya untuk Kebutuhan Anda
     </title>
     @include('layout.web.link')
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.png"
+      href="assets/images/css/logo/logo-transparent.png"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
@@ -22,10 +22,6 @@
     <script>
       new WOW().init();
     </script>
-
-     <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
   </head>
 
   <body>
@@ -249,29 +245,28 @@
 
   
     <!-- ====== Testimonial Section Start -->
-    <section
-      id="testimonials"
-      class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]"
-    >
-      <div class="container px-4 mx-auto">
-        <div class="flex flex-wrap justify-center -mx-4">
-          <div class="w-full px-4">
-            <div class="mx-auto mb-[60px] max-w-[485px] text-center">
-              <span class="block mb-2 text-lg font-semibold text-primary">
-                Testimonials
-              </span>
-              <h2
-                class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]"
-              >
-                What our Clients Say
-              </h2>
-              <p class="text-base text-body-color dark:text-dark-6">
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
-              </p>
-            </div>
-          </div>
+<section 
+    id="testimonials"
+  class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]"
+>
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-wrap justify-center -mx-4">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-[60px] max-w-[485px] text-center">
+          <span class="block mb-2 text-lg font-semibold text-primary">
+            Testimoni
+          </span>
+          <h2
+            class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]"
+          >
+            Apa Kata Klien Kami
+          </h2>
+          <p class="text-base text-body-color dark:text-dark-6">
+            Kami dipercaya oleh berbagai perusahaan untuk menyediakan barang kebutuhan mereka dengan cepat dan terpercaya.
+          </p>
         </div>
+      </div>
+    </div>
 
         <div class="-m-5">
           <div class="p-5 swiper testimonial-carousel common-carousel">
@@ -2712,78 +2707,8 @@
     <!-- ====== Brands Section End -->
 
     @include('layout.web.footer')
-<script>
-  
-      // ==== for menu scroll
-      const pageLink = document.querySelectorAll(".ud-menu-scroll");
-
-      pageLink.forEach((elem) => {
-        elem.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            offsetTop: 1 - 60,
-          });
-        });
-      });
-
-      // section menu active
-      function onScroll(event) {
-        const sections = document.querySelectorAll(".ud-menu-scroll");
-        const scrollPos =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop;
-
-        for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (
-            refElement.offsetTop <= scrollTopMinus &&
-            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-          ) {
-            document
-              .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
-      }
-
-      window.document.addEventListener("scroll", onScroll);
-
-      // Testimonial
-      const testimonialSwiper = new Swiper(".testimonial-carousel", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1280: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        },
-      });
-    </script>
-    <!-- ====== All Scripts -->
-
+    
+     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script> 
   </body>
 </html>
