@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('gambar_produk')->nullable();
             $table->string('kategori_produk')->nullable();
             $table->enum('status_produk', ['baru', 'hot', 'recommended'])->default('baru');
-            $table->decimal('discount', 5, 2)->default(0); // contoh: 10.00 berarti diskon 10%
+            $table->enum('type', ['makanan', 'minuman', 'furniture'])->default('makanan');
+            $table->decimal('discount', 5, 2)->default(0); 
             $table->timestamps();   
         });
     }

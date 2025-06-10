@@ -21,8 +21,6 @@
   </head>
 
   <body>
-    
-    
     <!-- ====== Forms Section Start -->
     <section class="bg-[#F4F7FF] py-14 lg:py-[90px] dark:bg-dark">
       <div class="container mx-auto px-4">
@@ -52,7 +50,7 @@
               <form method="POST" action="{{ route('register') }}">
                   @csrf
                   @if ($errors->any())
-                      <div class="mb-4 text-red-500 text-sm">
+                      <div class="mb-4 text-red-500 text-sm" style="color: red">
                           <ul>
                               @foreach ($errors->all() as $error)
                                   <li>{{ $error }}</li>
@@ -361,16 +359,7 @@
     <!-- ====== Forms Section End -->
 
 
-    <!-- ====== Back To Top Start -->
-    <a
-      href="javascript:void(0)"
-      class="fixed left-auto items-center justify-center hidden w-10 h-10 text-white transition duration-300 ease-in-out rounded-md shadow-md back-to-top bottom-8 right-8 z-999 bg-primary hover:bg-dark"
-    >
-      <span
-        class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"
-      ></span>
-    </a>
-    <!-- ====== Back To Top End -->
+
 
 
     <!-- ====== All Scripts -->

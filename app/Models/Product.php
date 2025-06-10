@@ -17,6 +17,7 @@ class product extends Model
         'gambar_produk',
         'kategori_produk',
         'status_produk',
+        'type',
         'discount'
     ];
 

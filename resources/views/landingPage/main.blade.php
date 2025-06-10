@@ -7,7 +7,6 @@
     <title>
       SupplyNest - Penyedia Barang Terpercaya untuk Kebutuhan Anda
     </title>
-    @include('layout.web.link')
     <link
       rel="shortcut icon"
       href="assets/images/css/logo/logo-transparent.png"
@@ -15,8 +14,7 @@
     />
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="/css/tailwind.css" />
-
+    <link rel="stylesheet" href="/css/tailwind.css">
     <!-- ==== WOW JS ==== -->
     <script src="assets/js/wow.min.js"></script>
     <script>
@@ -28,10 +26,11 @@
     
 <!-- ====== Header Section Start -->
 @include('layout.web.navbar')
+
 <div
   id="home"
   class="relative overflow-hidden bg-primary min-h-screen flex items-center justify-center"
-  style="background-image: url('assets/images/hero/company.jpg'); background-size: cover; background-position: center; padding-top: 80px; padding-bottom: 100px;"
+  style="background-image: url('assets/images/hero/company.jpg'); background-position: center; padding-bottom: 50px;"
 >
   <div class="container px-4 mx-auto">
     <div class="flex flex-wrap items-center justify-center text-center">
@@ -53,10 +52,10 @@
           <ul class="flex flex-wrap items-center justify-center gap-5 mb-10">
             <li>
               <a
-                href="#"
-                class="inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
+                href="{{ route('registerSupplier') }}"
+                class="inline-flex items-center justify-center rounded-md bg-blue-600 px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
               >
-                Layanan Kami
+                Daftar Sebagai Supplier
               </a>
             </li>
             <li>
@@ -80,7 +79,7 @@
 <!-- ====== Header Section End -->
 
     <!-- ====== Features Section Start -->
-    <section class="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+    <section class="pb-8 pt-20  lg:pb-[70px] lg:pt-[120px]">
       <div class="container px-4 mx-auto">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full px-4">
@@ -89,7 +88,7 @@
                 Fitur Utama
               </span>
               <h2
-                class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]"
+                class="mb-3 text-3xl font-bold text-dark sm:text-4xl md:text-[40px] md:leading-[1.2]"
               >
                 Apa Saja Yang Kami Tawarkan
               </h2>
@@ -105,9 +104,9 @@
     <div class="mb-12 wow fadeInUp group" data-wow-delay=".1s">
       <div class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
         <span class="absolute left-0 top-0 -z-1 mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary/20 duration-300 group-hover:rotate-45"></span>
-        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v1h16V5a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v6a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd"></path></svg>
+        <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v1h16V5a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v6a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd"></path></svg>
       </div>
-      <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">Manajemen Etalase Barang</h4>
+      <h4 class="mb-3 text-xl font-bold text-dark text-black">Manajemen Etalase Barang</h4>
       <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
         Supplier dapat mengelola data barang dan menonaktifkan produk dari etalase dengan mudah.
       </p>
@@ -121,7 +120,7 @@
         <span class="absolute left-0 top-0 -z-1 mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary/20 duration-300 group-hover:rotate-45"></span>
         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 7H7v6h6V7z"></path><path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v10H5V5z" clip-rule="evenodd"></path></svg>
       </div>
-      <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">Validasi Transaksi</h4>
+      <h4 class="mb-3 text-xl font-bold text-dark text-black">Validasi Transaksi</h4>
       <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
         Validasi transaksi secara dua arah antara supplier dan klien memastikan proses pembelian yang aman.
       </p>
@@ -135,7 +134,7 @@
         <span class="absolute left-0 top-0 -z-1 mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary/20 duration-300 group-hover:rotate-45"></span>
         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 3h14a1 1 0 011 1v1H2V4a1 1 0 011-1zM2 7h16v9a1 1 0 01-1 1H3a1 1 0 01-1-1V7z"></path></svg>
       </div>
-      <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">Pencarian & Pembelian</h4>
+      <h4 class="mb-3 text-xl font-bold text-black">Pencarian & Pembelian</h4>
       <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
         Klien dapat mencari produk dengan filter dan langsung melakukan pembelian dari supplier.
       </p>
@@ -149,7 +148,7 @@
         <span class="absolute left-0 top-0 -z-1 mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary/20 duration-300 group-hover:rotate-45"></span>
         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a1 1 0 000 2h2l.4 2H15a1 1 0 00.96-.73l1.5-5.5A1 1 0 0016.5 0H5.21l-.4-2H2a1 1 0 000 2h1.21l1.5 6.5H4a1 1 0 000 2h1.3l.9 4.5A1 1 0 007.2 16h9a1 1 0 001-.99V13a1 1 0 00-1-1h-1V9a1 1 0 00-1-1H7.61l-.2-1H15a1 1 0 000-2H6.61l-.6-3H4z"></path></svg>
       </div>
-      <h4 class="mb-3 text-xl font-bold text-dark dark:text-white">Ulasan Produk</h4>
+      <h4 class="mb-3 text-xl font-bold text-dark text-black">Ulasan Produk</h4>
       <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
         Klien dapat memberikan ulasan langsung terhadap produk yang dibeli untuk membantu pembeli lain.
       </p>
@@ -160,100 +159,84 @@
     </section>
     <!-- ====== Features Section End -->
 
-    {{-- product section  Start--}}
-<section
-  id="produk"
-  class="overflow-hidden bg-gray-100 py-10 md:py-[100px]"
->
-  <div class="container px-4 mx-auto">
-    <div class="flex flex-wrap -mx-4">
-      <div class="w-full px-4">
-        <div class="mx-auto mb-[60px] max-w-[485px] text-center">
-          <span class="block mb-2 text-lg font-semibold text-primary">
-            Produk Unggulan
-          </span>
-          <h2
-            class="mb-3 text-3xl font-bold leading-[1.2] text-gray-800 sm:text-4xl md:text-[40px]"
-          >
-            Temukan Produk Terbaik Kami
-          </h2>
-          <p class="text-base text-gray-600">
-            Pilihan produk unggulan kami dirancang untuk memenuhi kebutuhan Anda dengan kualitas terbaik dan harga bersaing.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Swiper -->
-    <div class="swiper produk-carousel">
-      <div class="swiper-wrapper">
-
-        <!-- === SLIDE / CARD PRODUK START === -->
-        <div class="swiper-slide">
-          <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-            <img
-              class="h-44 w-full object-cover object-center"
-              src="assets/images/produk/images.jpeg"
-              alt="Produk 1"
-            />
-            <div class="p-4">
-              <div class="flex items-center justify-between mb-2">
-                <span
-                  class="mb-12 inline-block rounded-[5px] bg-primary px-4 py-0.5 text-center text-xs font-medium leading-loose text-white">
-                  BARU</span>
-                <span class="text-xs text-gray-500"></span>
-              </div>
-              <h3 class="text-md font-semibold text-gray-800 truncate mb-1">
-                Oreo Strawberry Cream
-              </h3>
-              <p class="text-gray-700 font-bold mb-1">
-                Rp 500.000 <span class="text-sm font-normal text-gray-500">/ pack</span>
-              </p>
-              <div class="flex items-center text-sm text-yellow-500 mb-3">
-                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
-                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
-                <i class="far fa-star mr-2"></i>
-                <span class="text-gray-600">34 ulasan</span>
-              </div>
-              <!-- Lihat Selengkapnya -->
-              <a
-                href="/product/"
-                class="inline-block mt-2 text-sm text-blue-600 hover:underline font-medium"
-              >
-                Lihat Selengkapnya →
-              </a>
+<section id="produk" class="overflow-hidden bg-gray-100 -2 py-10 md:py-[100px]">
+    <div class="container px-4 mx-auto">
+        <div class="flex flex-wrap -mx-4">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-[60px] max-w-[485px] text-center">
+                    <span class="block mb-2 text-lg font-semibold text-primary">
+                        Produk Unggulan
+                    </span>
+                    <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-black sm:text-4xl md:text-[40px]">
+                        Temukan Produk Terbaik Kami
+                    </h2>
+                    <p class="text-base text-gray-600">
+                        Pilihan produk unggulan kami dirancang untuk memenuhi kebutuhan Anda dengan kualitas terbaik dan harga bersaing.
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- === SLIDE / CARD PRODUK END === -->
-
-        <!-- ==== Duplikasikan .swiper-slide untuk produk lain ==== -->
-        
-      </div>
-      <!-- Navigasi Swiper -->
-      <div class="swiper-button-prev text-gray-700"></div>
-      <div class="swiper-button-next text-gray-700"></div>
+        <!-- Swiper -->
+        <div class="swiper produk-carousel">
+            <div class="swiper-wrapper">
+                <!-- === SLIDE / CARD PRODUK START === -->
+                @foreach ($products as $product)
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                            <img class="h-50 w-full object-cover object-center"
+                                 src="{{ asset('assets/images/produk/' . $product->gambar_produk) }}"
+                                 alt="{{ $product->nama_produk }}"/>
+                            <div class="p-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="mb-5 inline-block rounded-[5px] bg-primary px-4 py-0.5 text-center text-xs font-medium leading-loose text-white">
+                                        {{ $product->status_produk }}
+                                    </span>
+                                    <span class="text-xs text-gray-500"></span>
+                                </div>
+                                <h3 class="text-md font-semibold text-black truncate mb-1">
+                                    {{ $product->nama_produk }}
+                                </h3>
+                                <p class="text-black dark:text-black font-bold mb-1">
+                                    Rp {{ number_format($product->harga_produk, 0, ',', '.') }}
+                                    <span class="text-sm font-normal text-gray-500">/ pack</span>
+                                </p>
+                                <div class="flex items-center text-sm text-yellow-500 mb-3">
+                                    <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
+                                    <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
+                                    <i class="far fa-star mr-2"></i>
+                                    <span class="text-gray-600">34 ulasan</span>
+                                </div>
+                                <!-- Lihat Selengkapnya -->
+                                <a href="#"
+                                   class="inline-block mt-2 text-sm text-blue-600 hover:underline font-medium">
+                                    Lihat Selengkapnya →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            @endforeach
+                <!-- ==== SLIDE / CARD PRODUK END ==== -->
+            </div>
+            <!-- Navigasi Swiper -->
+            <div class="swiper-button-prev text-gray-700"></div>
+            <div class="swiper-button-next text-gray-700"></div>
+        </div>
+        <!-- End Swiper -->
     </div>
-    <!-- End Swiper -->
-  </div>
 
-  <div class="mt-16 text-center">
-      <button
-        class="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition"
-        onclick="window.location.href='{{route('product')}}'"
-      >
-        Produk Lainnya
-      </button>
+    <div class="mt-6 text-center">
+        <button class="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition mt-4"
+                onclick="window.location.href='{{route('product')}}'">
+            Produk Lainnya
+        </button>
     </div>
-  </div>
 </section>
 
- {{-- product section End   --}}
 
 
     <!-- ====== About Section Start -->
     <section
-  id="about"
-  class="bg-white pb-8 pt-20 dark:bg-gray-900 lg:pb-[70px] lg:pt-[120px]"
+  class="bg-white pb-8 pt-20  lg:pb-[70px] lg:pt-[120px]"
 >
   <div class="container px-4 mx-auto">
     <div class="wow fadeInUp" data-wow-delay=".2s">
@@ -261,12 +244,12 @@
         <div class="w-full px-4 lg:w-1/2">
           <div class="mb-12 max-w-[540px] lg:mb-0">
             <h2
-              class="mb-5 text-3xl font-bold leading-tight text-gray-900 dark:text-white sm:text-[40px] sm:leading-[1.2]"
+              class="mb-5 text-3xl font-bold leading-tight text-gray-900  sm:text-[40px] sm:leading-[1.2]"
             >
               Solusi Cerdas untuk Distribusi & Brand Berkualitas
             </h2>
             <p
-              class="mb-10 text-base leading-relaxed text-gray-700 dark:text-gray-300"
+              class="mb-10 text-base leading-relaxed text-gray-700 "
             >
               SupplyNest membantu Anda mempercepat distribusi produk, membangun kepercayaan brand, dan menjangkau pasar lebih luas melalui jaringan kami yang terintegrasi dan teknologi logistik modern.
               <br /><br />
@@ -337,7 +320,7 @@
     <!-- ====== Testimonial Section Start -->
 <section 
     id="testimonials"
-  class="overflow-hidden bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]"
+  class="overflow-hidden bg-gray-1 py-20  md:py-[120px]"
 >
   <div class="container px-4 mx-auto">
     <div class="flex flex-wrap justify-center -mx-4">
@@ -347,7 +330,7 @@
             Testimoni
           </span>
           <h2
-            class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]"
+            class="mb-3 text-3xl font-bold leading-[1.2] text-dark text-blacksm:text-4xl md:text-[40px]"
           >
             Apa Kata Klien Kami
           </h2>
@@ -363,7 +346,7 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -404,7 +387,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         Sabo Masties
                       </h3>
@@ -416,7 +399,7 @@
 
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -457,7 +440,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         Musharof Chowdhury
                       </h3>
@@ -471,7 +454,7 @@
 
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -512,7 +495,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         William Smith
                       </h3>
@@ -526,7 +509,7 @@
 
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -567,7 +550,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         Sabo Masties
                       </h3>
@@ -579,7 +562,7 @@
 
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -620,7 +603,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         Musharof Chowdhury
                       </h3>
@@ -634,7 +617,7 @@
 
               <div class="swiper-slide">
                 <div
-                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]"
+                  class="rounded-xl bg-white px-4 py-[30px] shadow-testimonial  sm:px-[30px]"
                 >
                   <div class="mb-[18px] flex items-center gap-[2px]">
                     <img
@@ -675,7 +658,7 @@
 
                     <div>
                       <h3
-                        class="text-sm font-semibold text-dark dark:text-white"
+                        class="text-sm font-semibold text-dark text-black"
                       >
                         William Smith
                       </h3>
@@ -728,7 +711,7 @@
     <!-- ====== Team Section Start -->
     <section
       id="team"
-      class="overflow-hidden bg-gray-1 pb-12 pt-20 dark:bg-dark-2 lg:pb-[90px] lg:pt-[120px]"
+      class="overflow-hidden bg-gray-1 pb-12 pt-20 -2 lg:pb-[90px] lg:pt-[120px]"
     >
       <div class="container px-4 mx-auto">
         <div class="flex flex-wrap -mx-4">
@@ -738,7 +721,7 @@
                 Our Team Members
               </span>
               <h2
-                class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]"
+                class="mb-3 text-3xl font-bold leading-[1.2] text-dark text-blacksm:text-4xl md:text-[40px]"
               >
                 Our Creative Team
               </h2>
@@ -752,7 +735,7 @@
         <div class="flex flex-wrap justify-center -mx-4">
           <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
             <div
-              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
+              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial  dark:shadow-none"
             >
               <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
                 <img
@@ -988,7 +971,7 @@
               </div>
               <div class="text-center">
                 <h4
-                  class="mb-1 text-lg font-semibold text-dark dark:text-white"
+                  class="mb-1 text-lg font-semibold text-dark text-black"
                 >
                   Rizky Ismail Sidik
                 </h4>
@@ -1064,7 +1047,7 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
             <div
-              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
+              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial  dark:shadow-none"
             >
               <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
                 <img
@@ -1192,7 +1175,7 @@
               </div>
               <div class="text-center">
                 <h4
-                  class="mb-1 text-lg font-semibold text-dark dark:text-white"
+                  class="mb-1 text-lg font-semibold text-dark text-black"
                 >
                   Chandra M Reiga
                 </h4>
@@ -1268,7 +1251,7 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
             <div
-              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
+              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial  dark:shadow-none"
             >
               <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
                 <img
@@ -1396,7 +1379,7 @@
               </div>
               <div class="text-center">
                 <h4
-                  class="mb-1 text-lg font-semibold text-dark dark:text-white"
+                  class="mb-1 text-lg font-semibold text-dark text-black"
                 >
                   muhammad Haikal
                 </h4>
@@ -1472,7 +1455,7 @@
           </div>
           <div class="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
             <div
-              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial dark:bg-dark dark:shadow-none"
+              class="px-5 pt-12 pb-10 mb-8 bg-white group rounded-xl shadow-testimonial  dark:shadow-none"
             >
               <div class="relative z-10 mx-auto mb-5 h-[120px] w-[120px]">
                 <img
@@ -1600,7 +1583,7 @@
               </div>
               <div class="text-center">
                 <h4
-                  class="mb-1 text-lg font-semibold text-dark dark:text-white"
+                  class="mb-1 text-lg font-semibold text-dark text-black"
                 >
                   ZiddanFarrel
                 </h4>
@@ -1680,7 +1663,7 @@
     <!-- ====== Team Section End -->
 
     <!-- ====== Blog Section Start -->
-    <section class="bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+    <section class="bg-white pb-10 pt-20  lg:pb-20 lg:pt-[120px]" id="blog">
       <div class="container px-4 mx-auto">
         <div class="flex flex-wrap justify-center -mx-4">
           <div class="w-full px-4">
@@ -1689,7 +1672,7 @@
                 Our Blogs
               </span>
               <h2
-                class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]"
+                class="mb-4 text-3xl font-bold text-dark text-blacksm:text-4xl md:text-[40px] md:leading-[1.2]"
               >
                 Our Recent News
               </h2>
@@ -1721,7 +1704,7 @@
                 <h3>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary text-blackdark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
                   >
                     Meet AutoManage, the best AI management tools
                   </a>
@@ -1755,7 +1738,7 @@
                 <h3>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary text-blackdark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
                   >
                     How to earn more money as a wellness coach
                   </a>
@@ -1789,7 +1772,7 @@
                 <h3>
                   <a
                     href="javascript:void(0)"
-                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
+                    class="inline-block mb-4 text-xl font-semibold text-dark hover:text-primary text-blackdark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
                   >
                     The no-fuss guide to upselling and cross selling
                   </a>
@@ -1810,9 +1793,9 @@
 
     <!-- ====== Contact Start ====== -->
     <section id="contact" class="relative py-20 md:py-[120px]">
-      <div class="absolute top-0 left-0 w-full h-full -z-1 dark:bg-dark"></div>
+      <div class="absolute top-0 left-0 w-full h-full -z-1 "></div>
       <div
-        class="absolute left-0 top-0 -z-1 h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"
+        class="absolute left-0 top-0 -z-1 h-1/2 w-full bg-[#E9F9FF] -700 lg:h-[45%] xl:h-1/2"
       ></div>
       <div class="container px-4 mx-auto">
         <div class="flex flex-wrap items-center -mx-4">
@@ -1820,12 +1803,12 @@
             <div class="ud-contact-content-wrapper">
               <div class="ud-contact-title mb-12 lg:mb-[150px]">
                 <span
-                  class="block mb-6 text-base font-medium text-dark dark:text-white"
+                  class="block mb-6 text-base font-medium text-dark text-black"
                 >
                   CONTACT US
                 </span>
                 <h2
-                  class="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white"
+                  class="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark text-black"
                 >
                   Let's talk about your problem.
                 </h2>
@@ -1849,7 +1832,7 @@
                   </div>
                   <div>
                     <h5
-                      class="mb-[18px] text-lg font-semibold text-dark dark:text-white"
+                      class="mb-[18px] text-lg font-semibold text-dark text-black"
                     >
                       Our Location
                     </h5>
@@ -1873,7 +1856,7 @@
                   </div>
                   <div>
                     <h5
-                      class="mb-[18px] text-lg font-semibold text-dark dark:text-white"
+                      class="mb-[18px] text-lg font-semibold text-dark text-black"
                     >
                       How Can We Help?
                     </h5>
@@ -1890,12 +1873,12 @@
           </div>
           <div class="w-full px-4 lg:w-5/12 xl:w-4/12">
             <div
-              class="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:bg-dark-2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
+              class="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial -2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
               data-wow-delay=".2s
               "
             >
               <h3
-                class="mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]"
+                class="mb-8 text-2xl font-semibold text-dark text-blackmd:text-[28px] md:leading-[1.42]"
               >
                 Send us a Message
               </h3>
@@ -1976,5 +1959,22 @@
     
      <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script> 
+    <script>
+  // Dropdown JS
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('profileDropdownBtn');
+    const menu = document.getElementById('profileDropdownMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  });
+</script>
   </body>
 </html>

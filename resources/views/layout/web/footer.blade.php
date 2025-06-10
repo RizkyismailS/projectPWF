@@ -588,17 +588,7 @@
     <!-- ====== Back To Top End -->
 
   <!-- ====== Chat Button Start -->
-<a
-  href="javascript:void(0)"
-  class="fixed bottom-8 left-4 z-999 inline-flex items-center justify-center rounded-full bg-primary p-4 shadow-md text-white hover:bg-dark sm:left-9"
-  onclick="openChat()"
->
-  <img
-    src="assets/images/logo/chat.png"
-    alt="Chat Icon"
-    style="width: 50px; height: 50px;"
-  />
-</a>
+<
 <!-- ====== Chat Button End -->
 
 <script>

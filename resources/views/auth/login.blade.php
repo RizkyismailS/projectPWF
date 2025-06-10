@@ -21,9 +21,8 @@
   </head>
 
   <body>
-    
     <!-- ====== Forms Section Start -->
-    <section class="bg-[#F4F7FF] py-14 lg:py-20 dark:bg-dark">
+     <section class="bg-[#F4F7FF] py-14 lg:py-[90px] dark:bg-dark">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full px-4">
@@ -51,7 +50,7 @@
               <form method="POST" action="{{ route('login') }}">
                 @csrf
                 @if ($errors->any())
-                    <div class="mb-4 text-red-500 text-sm">
+                    <div class="mb-4 text-teal text-md" style="color: red">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -328,46 +327,13 @@
       </div>
     </section>
     <!-- ====== Forms Section End -->
-    @include('layout.web.footer')
-
-    <!-- ====== Back To Top Start -->
-    <a
-      href="javascript:void(0)"
-      class="fixed left-auto items-center justify-center hidden w-10 h-10 text-white transition duration-300 ease-in-out rounded-md shadow-md back-to-top bottom-8 right-8 z-999 bg-primary hover:bg-dark"
-    >
-      <span
-        class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"
-      ></span>
-    </a>
-    <!-- ====== Back To Top End -->
-
-    <!-- ====== Made With Button Start -->
-    <a
-      target="_blank"
-      rel="nofollow noopener"
-      class="inline-flex items-center gap-[10px] py-2 px-[14px] rounded-lg bg-white dark:bg-dark-2 shadow-2 fixed bottom-8 left-4 sm:left-9 z-999"
-      href="https://tailgrids.com/"
-    >
-      <span class="text-base font-medium text-dark-3 dark:text-dark-6">
-        Made with
-      </span>
-      <span class="block w-px h-4 bg-stroke dark:bg-dark-3"></span>
-      <span class="block max-w-[88px] w-full">
-        <img
-          src="./assets/images/brands/tailgrids.svg"
-          alt="tailgrids"
-          class="dark:hidden"
-        />
-        <img
-          src="./assets/images/brands/tailgrids-white.svg"
-          alt="tailgrids"
-          class="hidden dark:block"
-        />
-      </span>
-    </a>
-    <!-- ====== Made With Button End -->
 
     <!-- ====== All Scripts -->
     <script src="assets/js/main.js"></script>
+    <script>
+    window.addEventListener('popstate', function(event) {
+        window.location.href = '/home';
+    });
+</script>
   </body>
 </html>
