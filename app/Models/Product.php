@@ -9,6 +9,7 @@ class product extends Model
     protected $table = 'products';
 
     protected $fillable = [
+        'user_id',
         'nama_produk',
         'kode_produk',
         'deskripsi_produk',
@@ -26,4 +27,14 @@ class product extends Model
         'stok_produk' => 'integer',
         'discount' => 'decimal:2'
     ];
+
+    // In App\Models\Product.php
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+public function variant()
+{
+    return $this->hasMany(Variant::class);
+}
 }

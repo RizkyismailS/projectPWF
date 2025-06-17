@@ -52,7 +52,7 @@
           <ul class="flex flex-wrap items-center justify-center gap-5 mb-10">
             <li>
               <a
-                href="{{ route('registerSupplier') }}"
+                href="{{ route('supplier') }}"
                 class="inline-flex items-center justify-center rounded-md bg-blue-600 px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
               >
                 Daftar Sebagai Supplier
@@ -236,6 +236,7 @@
 
     <!-- ====== About Section Start -->
     <section
+    id="#about"
   class="bg-white pb-8 pt-20  lg:pb-[70px] lg:pt-[120px]"
 >
   <div class="container px-4 mx-auto">

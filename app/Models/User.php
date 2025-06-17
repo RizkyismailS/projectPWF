@@ -1,24 +1,23 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
     protected $table = 'users';
+    protected $primaryKey = 'user_id';
+    protected $keyType = 'int';
 
     protected $fillable = [
         'name',
+        'nama_perusahaan',
         'email',
         'password',
-        // 'type',
-        // 'phone',
-        // 'address',
-        // 'profile_picture',
-        // 'is_active'
-    ];
-
-    protected $casts = [
-        'is_active' => 'boolean'
+        'phone',
+        'address',
+        'profile_picture',
+        'type'
     ];
 }

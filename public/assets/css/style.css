@@ -1,0 +1,8 @@
+@media (max-width: 640px) {
+    .col-span-2 {
+        flex: 0 0 100%; /* Sidebar mengambil seluruh lebar pada layar kecil */
+    }
+    .col-span-8 {
+        flex: 0 0 100%; /* Konten utama mengambil seluruh lebar pada layar kecil */
+    }
+}

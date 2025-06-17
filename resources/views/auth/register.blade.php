@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="/css/tailwind.css" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- ==== WOW JS ==== -->
     <script src="assets/js/wow.min.js"></script>
@@ -21,8 +22,9 @@
   </head>
 
   <body>
+    @include('layout.web.navbar')
     <!-- ====== Forms Section Start -->
-    <section class="bg-[#F4F7FF] py-14 lg:py-[90px] dark:bg-dark">
+    <section class="bg-[#F4F7FF]  dark:bg-dark">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full px-4">
@@ -41,7 +43,7 @@
                     class="dark:hidden"
                   />
                   <img
-                    src="assets/images/logo/logo-white.svg"
+                    src="assets/images/logo/logo-transparent.png"
                     alt="logo"
                     class="hidden dark:block"
                   />
@@ -102,6 +104,7 @@
                           value="Sign Up"
                           class="w-full px-5 py-3 text-base text-white transition duration-300 ease-in-out border rounded-md cursor-pointer border-primary bg-primary hover:bg-blue-dark"
                       />
+                      <input type="hidden" name="is_supplier" value="0">
                   </div>
               </form>
               <span class="relative block text-center z-1 mb-7">

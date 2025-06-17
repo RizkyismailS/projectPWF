@@ -42,48 +42,44 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 @foreach($products as $product)
                                     <!-- Produk  -->
-                                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-                                        <img class="h-45 w-full object-cover object-center" src="{{ asset('assets/images/produk/' . $product->gambar_produk) }}" alt="{{ $product->nama_produk }}" />
-                                        <div class="p-4">
-                                            <div class="flex items-center justify-between mb-2">
-                                                <span class="mb-5 inline-block rounded bg-blue-500 px-4 py-1 text-center text-xs font-medium text-white" >{{ ucfirst($product->status_produk) }}
-                                                </span>
-                                            </div>
-                                            <h3 class="text-md font-semibold text-gray-800 truncate mb-1">
-                                                {{ $product->nama_produk }}
-                                            </h3>
-                                            <div class="text-gray-700 space-y-2 text-sm">
-                                                <div class="flex justify-between">
-                                                    <span class="font-medium">Kode</span>
-                                                    <span>{{ $product->kode_produk }}</span>
-                                                </div>
-                                                <div class="flex justify-between">
-                                                    <span class="font-medium">Kategori</span>
-                                                    <span>{{ $product->kategori_produk }}</span>
-                                                </div>
-                                                <div class="flex justify-between">
-                                                    <span class="font-medium">Harga</span>
-                                                    <span>Rp{{ number_format($product->harga_produk, 0, ',', '.') }}</span>
-                                                </div>
-                                                <div class="flex justify-between">
-                                                    <span class="font-medium">Stok</span>
-                                                    <span>{{ $product->stok_produk }}</span>
-                                                </div>
-                                            </div>
-                                            <p class="text-gray-700 font-bold mb-1">
-                                                Rp {{ number_format($product->harga_produk, 0, ',', '.') }} <span class="text-sm font-normal text-gray-500">/ pack</span>
-                                            </p>
-                                            <div class="flex items-center text-sm text-yellow-500 mb-3">
-                                                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
-                                                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
-                                                <i class="far fa-star mr-2"></i>
-                                                {{-- <span class="text-gray-600">34 ulasan</span> --}}
-                                            </div>
-                                            <a href="#" class="inline-block mt-2 text-sm text-blue-600 hover:underline font-medium">
-                                                Lihat Selengkapnya →
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('produk.detail', $product->id) }}" class="block group">
+    <div class="bg-white rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition cursor-pointer">
+        <img class="h-45 w-full object-cover object-center" src="{{ asset('assets/images/produk/' . $product->gambar_produk) }}" alt="{{ $product->nama_produk }}" />
+        <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+                <span class="mb-5 inline-block rounded bg-blue-500 px-4 py-1 text-center text-xs font-medium text-white">{{ ucfirst($product->status_produk) }}</span>
+            </div>
+            <h3 class="text-md font-semibold text-gray-800 truncate mb-1">{{ $product->nama_produk }}</h3>
+            <div class="text-gray-700 space-y-2 text-sm">
+                <div class="flex justify-between">
+                    <span class="font-medium">Kode</span>
+                    <span>{{ $product->kode_produk }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium">Kategori</span>
+                    <span>{{ $product->kategori_produk }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium">Harga</span>
+                    <span>Rp{{ number_format($product->harga_produk, 0, ',', '.') }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="font-medium">Stok</span>
+                    <span>{{ $product->stok_produk }}</span>
+                </div>
+            </div>
+            <p class="text-gray-700 font-bold mb-1 mt-3">
+                Rp {{ number_format($product->harga_produk, 0, ',', '.') }} <span class="text-sm font-normal text-gray-500">/ pack</span>
+            </p>
+            <div class="flex items-center text-sm text-yellow-500">
+                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
+                <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i>
+                <i class="far fa-star mr-2"></i>
+            </div>
+        </div>
+    </div>
+</a>
+
                                 @endforeach
                             </div>
                         </div>

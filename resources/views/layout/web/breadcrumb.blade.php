@@ -18,14 +18,8 @@
                     <li>
                         <a href="#" class="text-gray-800 hover:text-blue-700">Setting</a>
                     </li>
-                    <li>
-                        <svg class="h-4 w-4 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </li>
-                    <li aria-current="page">
-                        <span class="text-gray-400">Account</span>
-                    </li>
+                    
+                
                 </ul>
             </nav>
         </div>

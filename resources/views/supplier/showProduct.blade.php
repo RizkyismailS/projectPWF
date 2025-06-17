@@ -20,8 +20,8 @@
                         </div>
                     </form>
                 </div>
-                <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <a href="{{ route('createProduct') }}" class="border-2 p-3 flex items-center justify-center text-black bg-blue-300 hover:bg-gray-300 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2">
+                <div class="w-full mb-2 md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <a href="{{ route('produk.create') }}" class="border-2 p-3 flex items-center justify-center text-black bg-blue-300 hover:bg-gray-300 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2">
                     <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                     </svg>

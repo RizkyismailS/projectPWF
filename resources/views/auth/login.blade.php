@@ -20,11 +20,11 @@
     </script>
   </head>
 
-  <body>
+ <body class="min-h-screen bg-gray-100 flex items-center justify-center">
+   @include('layout.web.navbar')
     <!-- ====== Forms Section Start -->
-     <section class="bg-[#F4F7FF] py-14 lg:py-[90px] dark:bg-dark">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap -mx-4">
+      <div class="container mx-auto px-4 mt-20">
+        <div class="flex flex-wrap">
           <div class="w-full px-4">
             <div
               class="wow fadeInUp relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-14 px-8 text-center sm:px-12 md:px-[60px]"
@@ -41,7 +41,7 @@
                     class="dark:hidden"
                   />
                   <img
-                    src="assets/images/logo/logo-white.svg"
+                    src="assets/images/logo/logo-transparent.png"
                     alt="logo"
                     class="hidden dark:block"
                   />
@@ -92,7 +92,7 @@
                 
               <a
                 href="javascript:void(0)"
-                class="inline-block mb-2 text-base text-dark dark:text-white hover:text-primary dark:hover:text-primary"
+                class="inline-block mb-2 text-base text-gray-400 hover:text-primary dark:hover:text-primary"
               >
                 Forget Password?
               </a>
@@ -327,6 +327,26 @@
       </div>
     </section>
     <!-- ====== Forms Section End -->
+ @include('layout.web.navbar')
+@if(session('success'))
+<!-- Modal -->
+<div class="modal fade" id="registerSuccessModal" tabindex="-1" aria-labelledby="registerSuccessLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerSuccessLabel">Notifikasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{ session('success') }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
 
     <!-- ====== All Scripts -->
     <script src="assets/js/main.js"></script>
@@ -335,5 +355,13 @@
         window.location.href = '/home';
     });
 </script>
+@if(session('success'))
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('registerSuccessModal'));
+    window.onload = function() {
+        myModal.show();
+    }
+</script>
+@endif
   </body>
 </html>
