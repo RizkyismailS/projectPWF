@@ -2,20 +2,21 @@
     // Back to Top Button
 const backToTopButton = document.querySelector(".back-to-top");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTopButton.style.display = "flex"; // Tampilkan tombol saat scroll lebih dari 300px
-  } else {
-    backToTopButton.style.display = "none"; // Sembunyikan tombol saat scroll kurang dari 300px
-  }
-});
-
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Gulir dengan animasi halus
+if (backToTopButton) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.style.display = "flex"; // Tampilkan tombol saat scroll lebih dari 300px
+    } else {
+      backToTopButton.style.display = "none"; // Sembunyikan tombol saat scroll kurang dari 300px
+    }
   });
-});
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Gulir dengan animasi halus
+    });
+}
 
 // ==== for menu scroll
       const pageLink = document.querySelectorAll(".ud-menu-scroll");

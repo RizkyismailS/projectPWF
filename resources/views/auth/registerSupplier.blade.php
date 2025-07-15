@@ -9,7 +9,9 @@
 </head>
     <body class="bg-gray-300">
         @include('layout.web.navbar')
+
     <div class="max-w-[1000px] mx-auto border-gray-300 rounded-lg p-8 px-8 bg-white shadow">
+    
         <form method="POST" action="{{ route('registerSupplier') }}" enctype="multipart/form-data" class="space-y-8">
             @csrf
             <div class="grid grid-cols-2 gap-6">
@@ -36,7 +38,7 @@
                 <div class="mt-2">
                     <input type="text" name="nama_perusahaan" id="nama_perusahaan"
                         class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                        required>
+                        value="{{ old('nama_perusahaan') }}" required>
                 </div>
             </div>
 
@@ -83,7 +85,7 @@
     <div class="border-b border-gray-900/10 pb-12">
         <div class="mt-10 grid grid-cols-1 gap-y-8">
             <!-- Phone -->
-            <div>
+            <div class="mt-14">
                 <label for="phone" class="block text-sm/6 font-medium text-gray-900">Phone</label>
                 <div class="mt-2">
                     <input type="text" name="phone" id="phone"
@@ -101,7 +103,7 @@
             </div>
 
 <div>
-    <label for="profile_picture" class="block text-sm font-medium text-gray-900">Photo</label>
+    <label class="block text-sm font-medium text-gray-900">Photo</label>
     <div class="mt-2 flex items-center gap-x-3">
         <!-- Preview Icon -->
         <img id="image-preview" src="{{ asset('assets/images/user_profile/default.jpg') }}" class="mt-2 w-32 rounded-md shadow-md" alt="Image Preview" />

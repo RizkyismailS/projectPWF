@@ -13,6 +13,6 @@ class HomeController extends Controller
         $products = Product::all(); // Atau gunakan query yang lebih spesifik
 
         // Kirim data produk ke view
-        return view('landingPage/main', compact('products'));
+        return view('landingPage.main', compact('products'));
     }
 }

@@ -53,7 +53,8 @@
             <li>
               <a
                 href="{{ route('supplier') }}"
-                class="inline-flex items-center justify-center rounded-md bg-blue-600 px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
+                class="inline-flex items-center justify-center rounded-md bg-blue-500 px
+                -7 py-[14px] px-[10px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
               >
                 Daftar Sebagai Supplier
               </a>
@@ -104,7 +105,7 @@
     <div class="mb-12 wow fadeInUp group" data-wow-delay=".1s">
       <div class="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
         <span class="absolute left-0 top-0 -z-1 mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary/20 duration-300 group-hover:rotate-45"></span>
-        <svg class="w-6 h-6 text-dark" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v1h16V5a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v6a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd"></path></svg>
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v1h16V5a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v6a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd"></path></svg>
       </div>
       <h4 class="mb-3 text-xl font-bold text-dark text-black">Manajemen Etalase Barang</h4>
       <p class="mb-8 text-body-color dark:text-dark-6 lg:mb-9">

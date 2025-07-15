@@ -1,61 +1,40 @@
-@vite(['resources/css/app.css' , 'resource/js/app.js'])
+@vite(['resources/css/app.css' , 'resources/js/app.js'])
 <section class="bg-gray-50 w-full sm:p-5 sm:rounded-lg">
-    <div class="w-full">
-        <!-- Start coding here -->
-                        <div class="w-full md:w-1/2">
-                    <form method="GET" action="{{ route('supplier.showProduct.partial') }}" class="flex items-center">
-                        <label for="simple-search" class="sr-only">Search</label>
-                        <div class="relative w-full">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <input type="text" id="simple-search" name="search" value="{{ request('search') }}"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Search produk..." required>
-                        </div>
-                    </form>
-                </div>
-                <div class="w-full mb-2 md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <a href="{{ route('produk.create') }}" class="border-2 p-3 flex items-center justify-center text-black bg-blue-300 hover:bg-gray-300 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2">
-                    <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
-                    </svg>
-                    Add product
-                </a>
-                        
-                    </button>
-                    <div class="flex items-center space-x-3 w-full md:w-auto">
-                        <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
-                            <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                            </svg>
-                            Actions
-                        </button>
-                        <div id="actionsDropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="actionsDropdownButton">
-                                <li>
-                                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass Edit</a>
-                                </li>
-                            </ul>
-                            <div class="py-1">
-                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete all</a>
-                            </div>
-                        </div>
-                        <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" />
-                            </svg>
-                            Filter
-                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                            </svg>
-                        </button>
-                        </div>
+    <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="w-full md:w-1/2">
+          <div class="flex items-center gap-2">
+    <label for="simple-search" class="sr-only">Search</label>
+    <div class="relative w-full">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clip-rule="evenodd" />
+            </svg>
+        </div>
+        <input type="text" id="simple-search"
+               oninput="searchProducts(this.value)"
+               value="{{ request('search') }}"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
+               placeholder="Search produk...">
+    </div>
+</div>
+
+
+
+        </div>
+        <div class="w-full md:w-auto flex items-center justify-end">
+            <a href="{{ route('produk.create') }}" class="border-2 p-3 flex items-center justify-center text-black bg-blue-300 hover:bg-gray-300 focus:ring-4 focus:ring-primary-300 font-medium rounded-full text-sm px-4 py-2">
+                <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                Add product
+            </a>
+        </div>
+    </div>
+</section>
+
+                
                     </div>
                 </div>
             </div>
@@ -82,16 +61,23 @@
                 <td class="px-4 py-3">Rp{{ number_format($product->harga_produk, 0, ',', '.') }}</td>
                 <td class="px-4 py-3">{{ $product->deskripsi_produk }}</td>
                 <td class="px-4 py-3">
-                    <div class="flex justify-center gap-2">
-                        <button onclick="openModal('{{ $product->id }}')" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
-                            Detail
-                        </button>
-                        <a href="{{ route('produk.edit', $product->id) }}" class="bg-yellow-400 text-black text-sm px-3 py-1 rounded hover:bg-yellow-500">
-                            Edit
-                        </a>
-                    </div>
-                </td>
-            </tr>
+<div class="flex justify-center gap-2">
+    <button onclick="openModal('{{ $product->id }}')" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
+        Detail
+    </button>
+    <a href="{{ route('produk.edit', $product->id) }}" class="bg-yellow-400 text-black text-sm px-3 py-1 rounded hover:bg-yellow-500">
+        Edit
+    </a>
+
+    <form action="{{ route('produk.toggleStatus', $product->id) }}" method="POST" style="display: inline;">
+    @csrf
+    <button type="submit" class="px-2 py-1 text-white rounded 
+        {{ $product->produk_state === 'nonaktif' ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700' }}">
+        {{ $product->produk_state === 'nonaktif' ? 'Aktifkan' : 'Nonaktifkan' }}
+    </button>
+</form>
+</div>
+
 
             <!-- Modal -->
 <div id="modal-{{ $product->id }}" 
@@ -217,31 +203,11 @@
         </div>
     </div>
     </section>
-  <script>
-    function loadPartial(url, btn, hash) {
-    fetch(url)
-        .then(res => res.text())
-        .then(html => {
-            mainContent.innerHTML = html;
-            setActive(btn);
-            history.replaceState(null, '', hash);
-
-            // Re-register openModal dan closeModal agar bisa dipanggil dari HTML baru
-            window.openModal = function(id) {
-                const modal = document.getElementById('modal-' + id);
-                if (modal) modal.classList.remove('hidden');
-            };
-            window.closeModal = function(id) {
-                const modal = document.getElementById('modal-' + id);
-                if (modal) modal.classList.add('hidden');
-            };
-        })
-        .catch(err => console.error(err));
-}
 
 
-
-  </script>
 
 </body>
+
+
+
 

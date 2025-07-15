@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('nama_produk');
             $table->string('kode_produk')->unique();
             $table->text('deskripsi_produk')->nullable();
@@ -20,10 +21,11 @@ return new class extends Migration
             $table->integer('stok_produk')->default(0);
             $table->string('gambar_produk')->nullable();
             $table->string('kategori_produk')->nullable();
-            $table->enum('status_produk', ['baru', 'hot', 'recommended'])->default('baru');
+            $table->string('status_produk')->default('baru');
             $table->enum('type', ['makanan', 'minuman', 'furniture'])->default('makanan');
             $table->decimal('discount', 5, 2)->default(0); 
-            $table->timestamps();   
+            $table->enum('produk_state', ['aktif', 'nonaktif'])->default('aktif');
+            $table->timestamps();
         });
     }
     /**

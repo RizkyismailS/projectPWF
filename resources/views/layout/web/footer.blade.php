@@ -588,7 +588,6 @@
     <!-- ====== Back To Top End -->
 
   <!-- ====== Chat Button Start -->
-<
 <!-- ====== Chat Button End -->
 
 <script>

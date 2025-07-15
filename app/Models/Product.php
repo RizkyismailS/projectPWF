@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
     protected $table = 'products';
 
@@ -18,7 +18,7 @@ class product extends Model
         'gambar_produk',
         'kategori_produk',
         'status_produk',
-        'type',
+        'produk_state',
         'discount'
     ];
 
@@ -36,5 +36,13 @@ public function user()
 public function variant()
 {
     return $this->hasMany(Variant::class);
+}
+public function carts()
+{
+    return $this->hasMany(Cart::class);
+}
+public function orders()
+{
+    return $this->hasMany(Order::class);
 }
 }

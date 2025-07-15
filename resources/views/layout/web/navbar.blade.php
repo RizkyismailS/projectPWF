@@ -17,7 +17,6 @@
       <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0">
         <img src="{{ asset('assets/images/logo/logo-transparent.png') }}" alt="Logo" class="w-20 h-20 object-contain" />
       </a>
-
       <!-- Desktop Menu -->
       <ul class="hidden lg:flex gap-8 font-medium items-center h-full">
         <li><a href="{{ route('home') }}" class="text-white">Home</a></li>
@@ -51,14 +50,16 @@
 
     <!-- Profile Dropdown Button -->
     <div class="relative">
+      @if(Auth::user()->type !== 'admin')
         <button id="profileDropdownBtn" type="button" class="flex items-center gap-2 focus:outline-none">
-            <img src="{{ Auth::user()->profile_picture ?? asset('assets/images/user_profile/default.jpg') }}"
+            <img src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('assets/images/user_profile/default.jpg') }}"
                  alt="Profile" class="w-10 h-10 rounded-full border" />
             <span class="font-semibold hidden md:inline text-white">{{ Auth::user()->name }}</span>
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
         </button>
+      @endif
     </div>
 </div>
 

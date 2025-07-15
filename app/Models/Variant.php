@@ -9,23 +9,26 @@ class Variant extends Model
 {
     use HasFactory;
 
-    protected $table = 'variant';
-    
+    protected $table = 'variants';
+
     protected $fillable = [
         'product_id',
         'name',
-        // tambahkan field lain jika ada seperti 'price', 'stock', dsb
     ];
 
-    // Relasi ke produk
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
-    // Relasi ke banyak gambar
     public function images()
     {
-        return $this->hasMany(VariantImage::class);
+        return $this->hasMany(VariantImage::class, 'variant_id', 'id');
+    }
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class, 'variant_id', 'id');
     }
 }
+

@@ -329,22 +329,12 @@
     <!-- ====== Forms Section End -->
  @include('layout.web.navbar')
 @if(session('success'))
-<!-- Modal -->
-<div class="modal fade" id="registerSuccessModal" tabindex="-1" aria-labelledby="registerSuccessLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="registerSuccessLabel">Notifikasi</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        {{ session('success') }}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
-    </div>
-  </div>
+<div id="registerSuccessAlert" class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-green-500 text-white px-6 py-3 rounded shadow-lg flex items-center gap-2 animate__animated animate__fadeInDown">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+    </svg>
+    <span>{{ session('success') }}</span>
+    <button onclick="document.getElementById('registerSuccessAlert').remove()" class="ml-4 text-white hover:text-gray-200 text-xl leading-none">&times;</button>
 </div>
 @endif
 
@@ -363,5 +353,15 @@
     }
 </script>
 @endif
+<script>
+@if(session('success'))
+    setTimeout(function() {
+        var alert = document.getElementById('registerSuccessAlert');
+        if (alert) alert.remove();
+    }, 3500);
+@endif
+</script>
+  </body>
+</html>
   </body>
 </html>
