@@ -1,3 +1,9 @@
+<a href="{{ route('userSetting') }}" class="inline-flex items-center mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-semibold transition">
+    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    BACK
+</a>
 @vite(['resources/css/app.css' , 'resources/js/app.js'])
 <section class="bg-gray-50 w-full sm:p-5 sm:rounded-lg">
     <div class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -147,58 +153,56 @@
         of
         <span class="font-semibold text-gray-500">{{ $products->total() }}</span>
     </span>
+<ul class="inline-flex items-stretch -space-x-px">
+    {{-- Previous Page --}}
+    <li>
+        <a href="{{ $products->previousPageUrl() ? $products->previousPageUrl().'#daftar-barang' : '#' }}"
+           class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+           @if (!$products->onFirstPage()) rel="prev" @endif>
+            <span class="sr-only">Previous</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </li>
 
-    <ul class="inline-flex items-stretch -space-x-px">
-        {{-- Previous Page --}}
-        <li>
-            <a href="{{ $products->previousPageUrl() ?? '#' }}"
-               class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-               @if (!$products->onFirstPage()) rel="prev" @endif>
-                <span class="sr-only">Previous</span>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </li>
+    {{-- Page Numbers --}}
+    @for ($page = 1; $page <= $products->lastPage(); $page++)
+        @if ($page == $products->currentPage())
+            <li>
+                <a href="#" aria-current="page"
+                   class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+                    {{ $page }}
+                </a>
+            </li>
+        @elseif ($page == 1 || $page == $products->lastPage() || abs($page - $products->currentPage()) <= 1)
+            <li>
+                <a href="{{ $products->url($page) }}#daftar-barang"
+                   class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    {{ $page }}
+                </a>
+            </li>
+        @elseif ($page == $products->currentPage() - 2 || $page == $products->currentPage() + 2)
+            <li>
+                <span class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+                    ...
+                </span>
+            </li>
+        @endif
+    @endfor
 
-        {{-- Page Numbers --}}
-        @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
-            @if ($page == $products->currentPage())
-                <li>
-                    <a href="#" aria-current="page"
-                       class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-                        {{ $page }}
-                    </a>
-                </li>
-            @elseif ($page == 1 || $page == $products->lastPage() || abs($page - $products->currentPage()) <= 1)
-                <li>
-                    <a href="{{ $url }}"
-                       class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                        {{ $page }}
-                    </a>
-                </li>
-            @elseif ($page == $products->currentPage() - 2 || $page == $products->currentPage() + 2)
-                <li>
-                    <a href="#"
-                       class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
-                        ...
-                    </a>
-                </li>
-            @endif
-        @endforeach
-
-        {{-- Next Page --}}
-        <li>
-            <a href="{{ $products->nextPageUrl() ?? '#' }}"
-               class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-               @if ($products->hasMorePages()) rel="next" @endif>
-                <span class="sr-only">Next</span>
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                </svg>
-            </a>
-        </li>
-    </ul>
+    {{-- Next Page --}}
+    <li>
+        <a href="{{ $products->nextPageUrl() ? $products->nextPageUrl().'#daftar-barang' : '#' }}"
+           class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+           @if ($products->hasMorePages()) rel="next" @endif>
+            <span class="sr-only">Next</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </li>
+</ul>
 </nav>
         </div>
     </div>

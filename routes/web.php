@@ -70,7 +70,8 @@ Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
 Route::post('/orders/{order}/validate', [OrderController::class, 'validateOrder']);
 Route::post('/orders/{id}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
 Route::get('/landingPage/orderDetail/partial/{id}', [OrderController::class, 'showOrderPartial'])->name('landingPage.orderDetail.partial');
-
+Route::get('admin/RecentProduct', [AdminDashboardController::class, 'ViewProducts'])->name('admin.RecentProducts');
+Route::get('/admin/Profile', [AdminDashboardController::class, 'editProfile'])->name('admin.edit');
    
 
 

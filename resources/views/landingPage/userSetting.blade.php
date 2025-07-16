@@ -30,7 +30,6 @@
                     @auth
                     <li id="menu-account" data-menu="account" class="mt-5 cursor-pointer border-l-4 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">account</li>
                     @if (Auth::user()->type === 'client')
-                    <li id="keranjang" data-menu="keranjang" class="mt-5 cursor-pointer border-l-4 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">Keranjang</li>
                     <li id="detail-order" data-menu="detail" class="mt-5 cursor-pointer border-l-4 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">Order Detail</li>
                     @endif
                     @if (Auth::user()->type === 'supplier')

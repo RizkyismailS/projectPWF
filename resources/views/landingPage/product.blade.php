@@ -10,20 +10,20 @@
             {{-- Menu Filter Horizontal --}}
             <div class="flex flex-wrap items-center justify-between gap-4 mb-6 bg-white p-4 rounded-xl shadow sticky top-20">
     <!-- Search di kiri -->
-    <div class="flex items-center gap-2">
-        <input 
-            type="text" 
-            name="search"
-            value="{{ request('search') }}"
-            placeholder="Cari produk..."
-            class="h-12 border border-gray-300 text-gray-900 text-base font-normal leading-7 rounded-full pl-4 pr-10 bg-white w-64"
-            onkeydown="if(event.key==='Enter'){window.location.href='?search='+this.value+('{{ request('category') ? '&category='.request('category') : '' }}');}">
-        <svg width="24" height="24"></svg>
-        <button onclick="window.location.href='?search='+document.querySelector('input[name=search]').value+('{{ request('category') ? '&category='.request('category') : '' }}')"
-            class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">
-            Cari
-        </button>
-    </div>
+    <form method="GET" action="{{ url()->current() }}" class="flex items-center gap-2">
+    <input 
+        type="text" 
+        name="search"
+        value="{{ request('search') }}"
+        placeholder="Cari produk..."
+        class="h-12 border border-gray-300 text-gray-900 text-base font-normal leading-7 rounded-full pl-4 pr-10 bg-white w-64">
+    
+    <button type="submit"
+        class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition">
+        Cari
+    </button>
+</form>
+
     <!-- Kategori di kanan -->
     <div class="relative items-center">
         <select id="categoryFilter"
@@ -45,7 +45,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Main Product -->
                         <div class="md:col-span-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 @foreach($products as $product)
                                     <!-- Produk  -->
                                     <a href="{{ route('produk.detail', $product->id) }}" class="block group">
@@ -89,10 +89,11 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="mt-8 flex justify-center">
-                            {{ $products->links() }}
-                        </div>
+                        
                     </div>
+                    <div class="mt-8 flex justify-center">
+    {{ $products->onEachSide(2)->links('pagination::tailwind') }}
+</div>
                 </div>
             </div>
         </div>

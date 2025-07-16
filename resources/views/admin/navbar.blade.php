@@ -23,12 +23,10 @@
 
       <!-- dropdown menu -->
       <div id="profileDropdownPopup" class="hidden absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 py-1 z-50">
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+        <a href="{{route('admin.edit')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
           <i class="fad fa-user-edit mr-2"></i> Edit Profile
         </a>
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-          <i class="fad fa-inbox-in mr-2"></i> My Inbox
-        </a>
+        
         <div class="border-t border-gray-100"></div>
         <form method="POST" action="{{ route('logout') }}">
           @csrf

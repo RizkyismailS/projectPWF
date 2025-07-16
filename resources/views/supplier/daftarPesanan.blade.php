@@ -1,3 +1,9 @@
+<a href="{{ route('userSetting') }}" class="inline-flex items-center mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-semibold transition">
+    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    BACK
+</a>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 <section class="bg-gray-50 w-full sm:p-5 sm:rounded-lg">
     <div class="w-full">

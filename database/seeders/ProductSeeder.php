@@ -14,17 +14,17 @@ class ProductSeeder extends Seeder
             $product = Product::create([
                 'user_id'         => 1,
                 'nama_produk'     => 'Produk ' . $i,
-                'kode_produk'     => 2000 + $i,
+                'kode_produk'     => 1011 + $i,
                 'kategori_produk' => ['makanan', 'minuman', 'furniture'][rand(0,2)],
                 'harga_produk'    => rand(10000, 100000),
                 'stok_produk'     => rand(1, 100),
                 'deskripsi_produk'=> 'Deskripsi produk ke-' . $i,
-                'gambar_produk'   => 'default.jpg',
+                'gambar_produk'   => 'default.png',
             ]);
 
             // Tambahkan 2 varian untuk setiap produk
             for ($v = 1; $v <= 2; $v++) {
-                $product->variants()->create([
+                $product->variant()->create([
                     'name' => 'Varian ' . $v . ' Produk ' . $i,
                     // Tambahkan field lain sesuai kebutuhan, misal 'image_path' => 'default.jpg'
                 ]);

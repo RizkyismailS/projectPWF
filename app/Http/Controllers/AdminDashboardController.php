@@ -5,17 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User; 
 use App\Models\Order;
+use App\Models\Product;
 
 class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $clients = User::where('type', 'client')->get();
-        $order = Order::with('product', 'user')
-            ->where('status', '!=', 'canceled')
-            ->latest()
-            ->get();
-        return view('admin.dashboard', compact('order'));
+        $products = Product::latest()->take(5)->get(); // 5 produk terbaru
+    $orders = Order::latest()->take(5)->get();     // 5 order terbaru
+        return view('admin.dashboard', compact('orders', 'products'));
     }
 
     public function sidebar()
@@ -40,5 +38,17 @@ class AdminDashboardController extends Controller
         // Ambil semua pengguna dengan tipe 'supplier'
         $suppliers = User::where('type', 'supplier')->get();
         return view('admin.supplierList', compact('suppliers'));
+    }
+
+public function ViewProducts()
+{
+    // Ambil semua produk
+    $products = Product::all();
+    return view('admin.RecentProduct', compact('products'));
+}
+    public function editProfile()
+    {
+        $user = \Illuminate\Support\Facades\Auth::user();
+        return view('admin.Profile', compact('user'));
     }
 }

@@ -165,8 +165,7 @@ if ($request->has('variant')) {
     } else {
         $search = null;
     }
-
-    $products = $query->paginate(10);
+    $products = $query->paginate(12)->appends($request->except('page'));
 
     return view('supplier.showProduct', compact('products', 'search'));
 }
@@ -197,15 +196,29 @@ public function daftarPesananPartial(Request $request)
 {
     $product = Product::query()->where('produk_state', 'aktif'); 
 
+    // Filter kategori jika dipilih
     if ($request->filled('category')) {
         $product->where('kategori_produk', $request->category);
     }
 
-    $products = $product->paginate(12);
+    // Filter pencarian jika ada input search
+    if ($request->filled('search')) {
+        $search = $request->search;
+        $product->where(function ($query) use ($search) {
+            $query->where('nama_produk', 'like', "%$search%")
+                  ->orWhere('kode_produk', 'like', "%$search%");
+        });
+    }
+
+    // Paginate dan tetap bawa query string agar search & category tetap saat pagination
+    $products = $product->paginate(12)->withQueryString();
+
+    // Ambil semua kategori unik
     $categories = Product::distinct()->pluck('kategori_produk');
 
     return view('landingPage.product', compact('products', 'categories'));
 }
+
 
 
     public function destroy($id)
